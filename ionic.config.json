@@ -1,5 +1,7 @@
 {
   "name": "ASOtrack",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
