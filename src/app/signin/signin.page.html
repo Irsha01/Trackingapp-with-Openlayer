@@ -1,0 +1,87 @@
+<ion-toolbar>
+  <ion-buttons slot="start">
+    <ion-back-button default-href="/login"></ion-back-button>
+  </ion-buttons>
+  <ion-title>Back </ion-title>
+</ion-toolbar>
+
+<ion-content class="ion-padding">
+  <h1 class="pagehead">Mobile Number Verification</h1>
+
+  <div class="verifyimage">
+    <img src="assets/images/verify.jpg" />
+  </div>
+
+  <!-- <ion-item>
+    <ion-label position="floating">Enter Number</ion-label>
+    <ion-input
+      type="tel"
+      maxlength="10"
+      [attr.maxlength]="10"
+      (ionInput)="validateInput($event)"
+      inputmode="numeric"
+    ></ion-input>
+  </ion-item> -->
+  <ng-container *ngIf="verifymobile">
+    <ion-list>
+      <p>Enter your mobile numner</p>
+      <ion-item>
+        <!-- <ion-input
+          label-Placement="floating"
+          fill="outline"
+          placeholder="9876543210"
+          type="tel"
+        > -->
+        <ion-input
+          type="tel"
+          maxlength="10"
+          minlength="10"
+          [attr.maxlength]="10"
+          [attr.minlength]="10"
+          (ionInput)="validateInput($event)"
+          inputmode="numeric"
+          [(ngModel)]="mobilenumber"
+          name="mobilenumber"
+        >
+          <!-- <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon> -->
+          <span slot="start">+91 </span>
+          <ion-button
+            fill="clear"
+            slot="end"
+            [disabled]="!allowotp"
+            (click)="sendotp()"
+          >
+            <!-- <ion-icon slot="icon-only" name="eye" aria-hidden="true"></ion-icon> -->
+            Send OTP
+          </ion-button>
+        </ion-input>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+
+  <ng-container *ngIf="!verifymobile">
+    <!-- <ion-input></ion-input> -->
+    <ion-list>
+      <p>Enter your OTP</p>
+      <ion-item>
+        <ion-input
+          label-Placement="floating"
+          fill="outline"
+          placeholder="****"
+          maxlength="6"
+          minlength="6"
+          type="tel"
+          [attr.maxlength]="6"
+          [attr.minlength]="6"
+          (ionInput)="Otpcount($event)"
+          inputmode="numeric"
+        >
+        </ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="actionbtns">
+      <ion-button [disabled]="!allowlogin" (click)="Login()">Log in</ion-button>
+      <ion-button (click)="goback()">Cancel</ion-button>
+    </div>
+  </ng-container>
+</ion-content>
