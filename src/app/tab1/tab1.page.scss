@@ -1,0 +1,33 @@
+.map-container {
+    height: 50%;
+    width: 100%;
+  }
+  
+  .bottom-sheet {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+    transition: all 0.3s ease;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+    background: white;
+  }
+  
+  .collapsed {
+    height: 40vh;
+  }
+  
+  .expanded {
+    height: 70vh;
+  }
+  
+  .sheet-header {
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  ion-modal {
+    --border-radius: 20px 20px 0 0;
+  }
+  

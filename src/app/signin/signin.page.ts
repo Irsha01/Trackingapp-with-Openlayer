@@ -53,7 +53,7 @@ export class SigninPage implements OnInit {
   Login(){
   localStorage.setItem('usermobile',this.mobilenumber);
 
-  this.route.navigate(['/attendance']);
+  this.route.navigate(['/tabs']);
   }
   
 
