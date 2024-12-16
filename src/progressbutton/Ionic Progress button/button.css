@@ -1,0 +1,39 @@
+.progress-button-container {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    text-align: center;
+  }
+  
+  .progress-ring {
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    transform: rotate(-90deg); /* Rotate to start progress from the top */
+  }
+  
+  button.progress-button {
+    position: absolute;
+    top: 52%;
+    left: 48%;
+    transform: translate(-50%, -50%);
+    /* background-color: #4caf50; */
+    width: 90px;
+    height: 90px;
+    color: black;
+    border: 3px solid red;
+    background: none;
+    outline: none;
+    padding: 15px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .progress-bar {
+    transition: stroke-dashoffset 0.1s linear;
+  }
+  
